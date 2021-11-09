@@ -1,1 +1,54 @@
 @import './custom-bootstrap';
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.introBanner{
+
+    height: 13em;
+    background-image: url(../media/header.png);
+    background-size: cover;   
+}
+
+.learn-more-btn{
+    color: $primary;
+    align-content: center;
+}
+
+.lm-btn-darrow{
+    background-color: $primary;
+    mask-image: url(../media/down_arrow.svg);
+    mask-mode: alpha;
+    mask-size: 100%;
+    
+
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+}
+
+.introContent{
+
+    margin-top: 7vh;
+}
+
+.introPic{
+    width: 17em;
+}
+
+.h-100vh{
+    height: 100vh;
+}
+
+.w-25em{
+    width: 35em;
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")){
+    .w-25em{
+        width: 100%;
+    }
+
+}
