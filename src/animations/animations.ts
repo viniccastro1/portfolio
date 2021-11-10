@@ -19,12 +19,12 @@ const learnMoreAnimIn = () =>{
   })
   .add({
     targets: '.learn-more-btn',
-    color: '#FFFFFF',
+    color: '#fafafa',
     duration: 100
   },'-=100')
   .add({
     targets: '.lm-btn-darrow',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#fafafa'
   }, '-=100')
   .add({
     targets: '.learn-more-btn',
@@ -39,7 +39,7 @@ const learnMoreAnimOut = () =>{
   tl
   .add({
     targets: '.learn-more-btn',
-    backgroundColor: '#FFFFFF', 
+    backgroundColor: '#fafafa', 
     duration: 100
   })
   .add({

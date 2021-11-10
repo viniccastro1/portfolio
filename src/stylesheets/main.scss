@@ -4,9 +4,13 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.section{
+    background-image: url(../media/Sprinkle.svg);
+}
+
 .introBanner{
 
-    height: 13em;
+    height: 16em;
     background-image: url(../media/header.png);
     background-size: cover;   
 }
@@ -30,7 +34,7 @@ body{
 
 .introContent{
 
-    margin-top: 7vh;
+    margin-top: 8vh;
 }
 
 .introPic{
@@ -43,6 +47,18 @@ body{
 
 .w-25em{
     width: 35em;
+}
+
+.text-stroke{
+    text-shadow: 
+    3px 0 0 #fafafa,
+    -3px 0 0 #fafafa,
+    0 3px 0 #fafafa,
+    0 -3px 0 #fafafa,
+    3px 3px #fafafa,
+    -3px -3px 0 #fafafa,
+    3px -3px 0 #fafafa,
+    -3px 3px 0 #fafafa;
 }
 
 
