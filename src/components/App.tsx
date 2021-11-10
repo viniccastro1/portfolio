@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import LangText from './LangText';
-import {Container} from 'react-bootstrap';
+import {Container, Nav} from 'react-bootstrap';
 import Intro from './Intro';
+import MyNav from './MyNav';
+import AboutMe from './AboutMe';
 
 enum LangOptions {
   English = 'en',
@@ -29,7 +31,9 @@ function App() {
   
   return (
     <Container fluid className='bg-light'>
+      {/* <MyNav/> */}
       <Intro/>
+      <AboutMe/>
     </Container>
   );
 }

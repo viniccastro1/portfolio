@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Badge, Col, Row, Button } from 'react-bootstrap';
 import introPic from '../media/introPic.png';
 import LangText from './LangText';
-import {learnMoreAnimIn, learnMoreAnimOut} from '../animations/animations' 
+import {learnMoreBtnAnim, LearnMoreBtnOptions} from '../animations/animations' 
 
 
 function Intro(props:any) {
@@ -28,30 +28,22 @@ function Intro(props:any) {
                     </Row>
 
                     <Row>
-                        <LangText
-                        className='fs-3 text-center'
-                        en={
+                        <span>
                             <Button 
-                            onMouseEnter={()=>learnMoreAnimIn()} 
-                            onMouseLeave={()=>learnMoreAnimOut()} 
+                            onMouseEnter={()=>learnMoreBtnAnim(LearnMoreBtnOptions.MouseIn)} 
+                            onMouseLeave={()=>learnMoreBtnAnim(LearnMoreBtnOptions.MouseOut)} 
                             variant='white' 
-                            className='learn-more-btn d-flex mx-auto'>
-                                <span className='fw-bold fs-4'>Learn more</span>
+                            className='learn-more-btn d-flex mx-auto'
+                            >
+                                <span className='fw-bold fs-4'>
+                                    <LangText
+                                    en={'Learn more'}
+                                    pt={'Veja mais'}
+                                    />
+                                </span>
                                 <span className='mx-2 lm-btn-darrow'/>
                             </Button>
-                        }
-
-                        pt={
-                            <Button 
-                            onMouseEnter={()=>learnMoreAnimIn()} 
-                            onMouseLeave={()=>learnMoreAnimOut()} 
-                            variant='white' 
-                            className='learn-more-btn d-flex mx-auto'>
-                                <span className='fw-bold fs-4'>Veja mais</span>
-                                <span className='mx-2 lm-btn-darrow'/>
-                            </Button>
-                        }
-                        />
+                        </span>
                     </Row>
                 </div>
             </Col>

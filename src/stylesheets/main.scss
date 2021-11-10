@@ -1,16 +1,41 @@
 @import './custom-bootstrap';
 
+#root, body{
+    width: 100%
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
+}
+
+.bg-dark-primary{
+    background-color: #4C2A54;
+}
+
+.img-fit-cover{
+    object-fit: cover;
 }
 
 .section{
     background-image: url(../media/Sprinkle.svg);
 }
 
+.about-me{
+    background-image: url(../media/aboutMeBg.jpg);
+    background-size: cover; 
+}
+
+.border-radius-1{
+    border-radius: 0.5em;
+}
+
+.box-shadow-1{
+    box-shadow: 5px 5px 3px 5px rgba(0,0,0,0.4);
+}
+
 .introBanner{
 
-    height: 16em;
+    height: 14em;
     background-image: url(../media/header.png);
     background-size: cover;   
 }
@@ -34,7 +59,7 @@ body{
 
 .introContent{
 
-    margin-top: 8vh;
+    margin-top: 5vh;
 }
 
 .introPic{
