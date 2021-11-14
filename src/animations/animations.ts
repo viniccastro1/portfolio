@@ -1,13 +1,13 @@
 import anime from 'animejs';
 
 
-enum LearnMoreBtnOptions {
+enum HoverOptions {
   MouseIn,
   MouseOut
 }
 
-const learnMoreBtnAnim = (arg:LearnMoreBtnOptions) => {
-  if (arg === LearnMoreBtnOptions.MouseIn){
+const learnMoreBtnAnim = (hoverOption:HoverOptions) => {
+  if (hoverOption === HoverOptions.MouseIn){
       let tl = anime.timeline({});
 
       tl
@@ -31,7 +31,7 @@ const learnMoreBtnAnim = (arg:LearnMoreBtnOptions) => {
       }, '-=1000');
   }
 
-  else if (arg === LearnMoreBtnOptions.MouseOut){
+  else if (hoverOption === HoverOptions.MouseOut){
     let tl = anime.timeline({});
 
     tl
@@ -56,5 +56,47 @@ const learnMoreBtnAnim = (arg:LearnMoreBtnOptions) => {
   }
 }
 
+const showMoreBtnAnim = (hoverOption:HoverOptions, target:EventTarget) => {
+  if (hoverOption === HoverOptions.MouseIn){
+      let tl = anime.timeline({});
 
-export {learnMoreBtnAnim, LearnMoreBtnOptions};
+      tl
+      .add({
+        targets: target,
+        backgroundColor: '#7B4289',
+        duration: 100
+      })
+      .add({
+        targets: target,
+        color: '#fafafa',
+        duration: 100
+      },'-=100')
+      .add({
+        targets: target,
+        scale: 1.1,
+      }, '-=100');
+  }
+
+  else if (hoverOption === HoverOptions.MouseOut){
+    let tl = anime.timeline({});
+
+    tl
+    .add({
+      targets: target,
+      backgroundColor: '#fafafa', 
+      duration: 100
+    })
+    .add({
+      targets: target,
+      color: '#7B4289',
+      duration: 100
+    },'-=100')  
+    .add({
+      targets: target,
+      scale: 1,
+    },'-=100');
+  }
+}
+
+
+export {learnMoreBtnAnim, showMoreBtnAnim, HoverOptions};

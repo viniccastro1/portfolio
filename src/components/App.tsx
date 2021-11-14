@@ -4,6 +4,8 @@ import {Container, Nav} from 'react-bootstrap';
 import Intro from './Intro';
 import MyNav from './MyNav';
 import AboutMe from './AboutMe';
+import Technologies from './Technologies';
+import Projects from './Projects';
 
 enum LangOptions {
   English = 'en',
@@ -16,7 +18,6 @@ function App() {
   //Multilingual elements are hidden by default (check
   //'LangText' element definition).
   //This method will only display the elements from current selected language.
-
   const changeLanguage = (arg:LangOptions) => {
     const displayedElements = document.querySelectorAll(`[lang=${arg}]`) as NodeListOf<HTMLElement>;
 
@@ -34,6 +35,8 @@ function App() {
       {/* <MyNav/> */}
       <Intro/>
       <AboutMe/>
+      <Technologies/>
+      <Projects/>
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Badge, Col, Row, Button } from 'react-bootstrap';
 import introPic from '../media/introPic.png';
 import LangText from './LangText';
-import {learnMoreBtnAnim, LearnMoreBtnOptions} from '../animations/animations' 
+import {learnMoreBtnAnim, HoverOptions} from '../animations/animations' 
 
 
 function Intro(props:any) {
@@ -11,7 +11,7 @@ function Intro(props:any) {
         <>
         <Row className='h-100vh section'>
             <Col className='introBanner p-0 bg-primary'>
-                <div className='w-25em mx-auto introContent'>
+                <div className='w-25em mx-auto introContent' data-aos="fade-right">
                     <Row>
                         <img src={introPic} className='introPic mx-auto mb-3'></img>
                     </Row>
@@ -22,7 +22,7 @@ function Intro(props:any) {
                     <Row>
                         <LangText
                         className='fs-4 text-center text-stroke'
-                        en={<p><span className='fw-bold text-primary '>Front-end developer</span> whom loves to create interfaces and work with logic. I have been developing websites and softwares for about two years.</p>}
+                        en={<p><span className='fw-bold text-primary '>Front-end developer</span> who loves to create interfaces and work with logic. I have been developing websites and softwares for about two years.</p>}
                         pt={<p><span className='fw-bold text-primary'>Desenvolvedor front-end</span> que ama criar interfaces e trabalhar com lógica. Tenho desenvolvido programas e sites por dois anos.</p>}
                         />
                     </Row>
@@ -30,8 +30,8 @@ function Intro(props:any) {
                     <Row>
                         <span>
                             <Button 
-                            onMouseEnter={()=>learnMoreBtnAnim(LearnMoreBtnOptions.MouseIn)} 
-                            onMouseLeave={()=>learnMoreBtnAnim(LearnMoreBtnOptions.MouseOut)} 
+                            onMouseEnter={()=>learnMoreBtnAnim(HoverOptions.MouseIn)} 
+                            onMouseLeave={()=>learnMoreBtnAnim(HoverOptions.MouseOut)} 
                             variant='white' 
                             className='learn-more-btn d-flex mx-auto'
                             >

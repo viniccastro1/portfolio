@@ -11,6 +11,7 @@
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
     "animejs": "^3.2.1",
+    "aos": "^2.3.4",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
     "react-dom": "^17.0.2",
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@types/animejs": "^3.1.4"
+    "@types/animejs": "^3.1.4",
+    "@types/aos": "^3.0.4"
   }
 }
