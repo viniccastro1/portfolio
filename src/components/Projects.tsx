@@ -1,74 +1,129 @@
-import React, { useEffect, useState } from 'react';
-import { Badge, Col, Row, Button, Navbar, Container, Image, Collapse } from 'react-bootstrap';
-import aboutMeImg from '../media/me.jpg';
-//import MyVideo from "../media/myVideo.mp4";
-import LangText from './LangText';
-import {showMoreBtnAnim, HoverOptions} from '../animations/animations';
+import React, {
+  FunctionComponent,
+  ReactComponentElement,
+  useEffect,
+  useState,
+} from "react";
+import {
+  Badge,
+  Col,
+  Row,
+  Button,
+  Navbar,
+  Container,
+  Image,
+  Collapse,
+} from "react-bootstrap";
+import aboutMeImg from "../media/me.jpg";
+import MyVideo from "../media/myVideo.mp4";
+import LangText from "./LangText";
+import "../custom.d.ts";
+import { showMoreBtnAnim, HoverOptions } from "../animations/animations";
 
+interface ProjectProps {
+  title: JSX.Element | string;
+  text: JSX.Element;
+  thumb: any;
+  video: any;
+}
 
-function Projects(props:any) {
+interface ShowMoreBtnProps {
+  onClick: any;
+  open?: any;
+}
 
-    function Project(props:any){
-        const [open, setOpen] = useState(false);
-        return (
-            <>
-            <Row className='justify-content-center pb-2 pt-5 mb-3 text-light my-bg-gradient'>
-                
-                <Col lg={8}>
-                    <Row className='mb-3'>
-                        <Col sm={3}>
-                            <Image src={aboutMeImg} fluid></Image>
-                        </Col>
-                        <Col sm={9}>
-                            <p className='fw-bold fs-1'>Ironizador de Texto</p>
-                            <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam recusandae voluptas ea, vitae rem assumenda, dolores cumque saepe atque hic vero similique illo incidunt, ducimus sed corrupti. Architecto, saepe.</p>
-                        </Col>   
-                    </Row>
-                    
-                    <Row>
-                        <Col>
-                            <Button 
-                            className='w-100 show-more-btn fs-3 py-0' variant='light'
-                            onMouseEnter={(e)=>{showMoreBtnAnim(HoverOptions.MouseIn, e.target)}} 
-                            onMouseLeave={(e)=>{showMoreBtnAnim(HoverOptions.MouseOut, e.target)}} 
-                            onClick={() => setOpen(!open)}> 
-                                I'm a button 
-                            </Button>
-                        </Col>
-                        
-                    </Row>
-
-                </Col>
-            </Row>
-
-        <Collapse in={open}>
-            <Row className='bg-light'>
-                <video width="320" height="240" controls>
-                    <source src='' type='video/mp4'/>
-                    Your browser does not support the video tag.
-                </video>
-            </Row>
-        </Collapse>
-        </>
-
-        )
+function ShowMoreBtn(props: ShowMoreBtnProps) {
+  const text = (): string => {
+    if (props.open === true) {
+      return "Show less";
+    } else {
+      return "Show more";
     }
+  };
+
+  return (
+    <Button
+      className="w-100 show-more-btn fs-3 py-0"
+      variant="light"
+      onMouseEnter={(e) => {
+        showMoreBtnAnim(HoverOptions.MouseIn, e.target);
+      }}
+      onMouseLeave={(e) => {
+        showMoreBtnAnim(HoverOptions.MouseOut, e.target);
+      }}
+      onClick={props.onClick}
+    >
+      {text()}
+    </Button>
+  );
+}
+
+function Projects(props: any) {
+  function Project(props: ProjectProps) {
+    const [open, setOpen] = useState(false);
 
     return (
-        <Row>
+      <>
+        <Row className="justify-content-center pb-2 pt-5 mb-3 text-light my-bg-gradient">
+          <Col lg={8}>
+            <Row className="mb-3">
+              <Col sm={3} className="d-flex align-items-center">
+                <Image src={props.thumb} fluid className="circle-mask"></Image>
+              </Col>
+              <Col sm={9}>
+                <p className="fw-bold fs-1">{props.title}</p>
+                <p className="fs-4">{props.text}</p>
+              </Col>
+            </Row>
 
-            <Col>
-                <Row>
-                    <LangText className='fs-2 fw-bold text-primary text-center pb-3 my-5 text-decoration-underline'
-                    en={'My other projects:'}
-                    pt={'Meus outros projetos:'}
-                    />
-                </Row>
-                <Project></Project>
-                <Project></Project>
-            </Col>
+            <Row>
+              <Col>
+                <ShowMoreBtn onClick={() => setOpen(!open)} open={open} />
+              </Col>
+            </Row>
+          </Col>
         </Row>
+
+        <Collapse in={open}>
+          <Row className="bg-light">
+            <video width="320" height="240" controls>
+              <source src={props.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Row>
+        </Collapse>
+      </>
     );
+  }
+
+  return (
+    <Row>
+      <Col>
+        <Row>
+          <LangText
+            className="fs-2 fw-bold text-primary text-center pb-3 my-5 text-decoration-underline"
+            en={"My other projects:"}
+            pt={"Meus outros projetos:"}
+          />
+        </Row>
+        <Project
+          title={"Bodyfat Calculator"}
+          text={
+            <LangText
+              en={
+                "Calculates your bodyfat percentagem using measurements like hips, neck and waist."
+              }
+              pt={
+                "Calcula sua quantidade de gordura corporal usando medidas como quadril, pescoço e cintura."
+              }
+            />
+          }
+          thumb={aboutMeImg}
+          video={MyVideo}
+        ></Project>
+      </Col>
+    </Row>
+  );
 }
 
 export default Projects;
