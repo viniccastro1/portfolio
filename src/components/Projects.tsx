@@ -15,12 +15,16 @@ import {
   Collapse,
 } from "react-bootstrap";
 import aboutMeImg from "../media/me.jpg";
+import mockingText from "../media/mocking_text.png";
 import MyVideo from "../media/myVideo.mp4";
+import ProjBf from "../media/proj_bodyfat.mp4";
 import LangText from "./LangText";
 import "../custom.d.ts";
 import { showMoreBtnAnim, HoverOptions } from "../animations/animations";
+import { couldStartTrivia } from "typescript";
 
 interface ProjectProps {
+  collapseId: string;
   title: JSX.Element | string;
   text: JSX.Element;
   thumb: any;
@@ -58,44 +62,63 @@ function ShowMoreBtn(props: ShowMoreBtnProps) {
   );
 }
 
-function Projects(props: any) {
-  function Project(props: ProjectProps) {
-    const [open, setOpen] = useState(false);
+function Project(props: ProjectProps) {
+  const [open, setOpen] = useState(false);
+  const onClick = () => {
+    setOpen(!open);
+  };
+
+  function Video(props: any) {
+    useEffect(() => {
+      const collapseEl = document.getElementById(
+        props.collapseId
+      ) as HTMLElement;
+      collapseEl.scrollIntoView();
+      console.log(collapseEl);
+    });
 
     return (
-      <>
-        <Row className="justify-content-center pb-2 pt-5 mb-3 text-light my-bg-gradient">
-          <Col lg={8}>
-            <Row className="mb-3">
-              <Col sm={3} className="d-flex align-items-center">
-                <Image src={props.thumb} fluid className="circle-mask"></Image>
-              </Col>
-              <Col sm={9}>
-                <p className="fw-bold fs-1">{props.title}</p>
-                <p className="fs-4">{props.text}</p>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col>
-                <ShowMoreBtn onClick={() => setOpen(!open)} open={open} />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Collapse in={open}>
-          <Row className="bg-light">
-            <video width="320" height="240" controls>
-              <source src={props.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </Row>
-        </Collapse>
-      </>
+      <Row className="bg-light" id={props.collapseId}>
+        <video width="320" height="240" controls>
+          <source src={props.video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Row>
     );
   }
 
+  return (
+    <>
+      <Row className="justify-content-center pb-2 pt-5 mb-3 text-light my-bg-gradient">
+        <Col lg={8}>
+          <Row className="mb-3">
+            <Col sm={3} className="d-flex align-items-center">
+              <Image src={props.thumb} fluid className="circle-mask"></Image>
+            </Col>
+            <Col sm={9}>
+              <p className="fw-bold fs-1">{props.title}</p>
+              <p className="fs-4">{props.text}</p>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <ShowMoreBtn onClick={onClick} open={open} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
+      <Collapse in={open}>
+        <Row className="bg-light" id={props.collapseId}>
+          <Video video={props.video} collapseId={props.collapseId}></Video>
+        </Row>
+      </Collapse>
+    </>
+  );
+}
+
+function Projects(props: any) {
   return (
     <Row>
       <Col>
@@ -106,7 +129,9 @@ function Projects(props: any) {
             pt={"Meus outros projetos:"}
           />
         </Row>
+
         <Project
+          collapseId="proj1"
           title={"Bodyfat Calculator"}
           text={
             <LangText
@@ -119,6 +144,23 @@ function Projects(props: any) {
             />
           }
           thumb={aboutMeImg}
+          video={ProjBf}
+        ></Project>
+
+        <Project
+          collapseId="proj1"
+          title={"Mocking Text Generator"}
+          text={
+            <LangText
+              en={
+                "Fun basic project on React that makes you text ironic alternating the text with capital characters."
+              }
+              pt={
+                "Projeto básico no React que ironiza seu texto alterando o texto com caracteres maiúsculos."
+              }
+            />
+          }
+          thumb={mockingText}
           video={MyVideo}
         ></Project>
       </Col>
