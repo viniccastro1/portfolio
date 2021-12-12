@@ -24,12 +24,12 @@ body {
 }
 
 .section {
-  background-image: url(../media/Sprinkle.svg);
+  background-image: url(../media/bg_sprinkle.svg);
   background-attachment: fixed;
 }
 
 .technologies-bg {
-  background-image: url(../media/guyReading.svg),
+  background-image: url(../media/bg_guy_reading.svg),
     linear-gradient(#d0c8ef, #7b4289);
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -37,7 +37,7 @@ body {
 }
 
 .about-me {
-  background-image: url(../media/aboutMeBg.jpg);
+  background-image: url(../media/bg_purple_blurred_computer.jpg);
   background-size: cover;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .introBanner {
   height: 14em;
-  background-image: url(../media/header.png);
+  background-image: url(../media/bg_purple_computer.png);
   background-size: cover;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .lm-btn-darrow {
   background-color: $primary;
-  mask-image: url(../media/down_arrow.svg);
+  mask-image: url(../media/icon_down_arrow.svg);
   mask-mode: alpha;
   mask-size: 100%;
 
@@ -104,7 +104,7 @@ body {
 }
 
 .circle-mask {
-  mask: url(../media/circle.svg);
+  mask: url(../media/mask_circle.svg);
   mask-size: 100%;
 }
 

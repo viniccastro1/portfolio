@@ -14,11 +14,13 @@ import {
   Image,
   Collapse,
 } from "react-bootstrap";
-import aboutMeImg from "../media/me.jpg";
-import mockingText from "../media/mocking_text.png";
-import MyVideo from "../media/myVideo.mp4";
-import ProjBf from "../media/proj_bodyfat.mp4";
 import LangText from "./LangText";
+
+import ThumbMockingTextGen from "../media/thumb_mocking_text_generator.png";
+import VideoMockingTextGen from "../media/video_mocking_text_generator.mp4";
+import ThumbBFCalculator from "../media/thumb_bodyfat_calculator.png";
+import VideoBFCalculator from "../media/video_bodyfat_calculator.mp4";
+
 import "../custom.d.ts";
 import { showMoreBtnAnim, HoverOptions } from "../animations/animations";
 import { couldStartTrivia } from "typescript";
@@ -143,8 +145,8 @@ function Projects(props: any) {
               }
             />
           }
-          thumb={aboutMeImg}
-          video={ProjBf}
+          thumb={ThumbBFCalculator}
+          video={VideoBFCalculator}
         ></Project>
 
         <Project
@@ -160,8 +162,8 @@ function Projects(props: any) {
               }
             />
           }
-          thumb={mockingText}
-          video={MyVideo}
+          thumb={ThumbMockingTextGen}
+          video={VideoMockingTextGen}
         ></Project>
       </Col>
     </Row>

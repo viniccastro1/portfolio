@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Col, Row, Button } from "react-bootstrap";
-import introPic from "../media/introPic.png";
+import introPic from "../media/me_circle.png";
 import LangText from "./LangText";
 import { learnMoreBtnAnim, HoverOptions } from "../animations/animations";
 
