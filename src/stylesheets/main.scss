@@ -89,7 +89,7 @@ body {
   width: 17em;
 }
 
-.h-100vh {
+.h-100vh-res {
   height: 100vh;
 }
 
@@ -109,6 +109,10 @@ body {
 }
 
 @media (max-width: map-get($grid-breakpoints, "sm")) {
+  .h-100vh-res {
+    height: 120vh;
+  }
+
   .w-25em {
     width: 100%;
   }

@@ -13,7 +13,7 @@ function Intro(props: any) {
 
   return (
     <>
-      <Row className="h-100vh section">
+      <Row className="h-100vh-res section">
         <Col className="introBanner p-0 bg-primary">
           <div className="w-25em mx-auto introContent" data-aos="fade-right">
             <Row>

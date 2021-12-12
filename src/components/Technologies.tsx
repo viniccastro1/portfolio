@@ -15,7 +15,7 @@ function Technologies(props: any) {
   return (
     <Row className="technologies-bg">
       <Col>
-        <Row data-aos="fade-right" className="h-100vh py-5">
+        <Row data-aos="fade-right" className="min-vh-100 py-5">
           <Col sm={7} className="offset-sm-1">
             <LangText
               className="display-4 fw-bold text-light pb-5"
@@ -35,7 +35,7 @@ function Technologies(props: any) {
           </Col>
         </Row>
 
-        <Row data-aos="fade-right" className="h-100vh py-5">
+        <Row data-aos="fade-right" className="min-vh-100 py-5">
           <Col sm={7} className="offset-sm-1">
             <LangText
               className="display-4 fw-bold text-light pb-5"

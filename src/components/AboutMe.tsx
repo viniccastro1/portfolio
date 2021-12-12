@@ -15,7 +15,7 @@ import AOS from "aos";
 function AboutMe(props: any) {
   return (
     <Row
-      className="h-100vh about-me justify-content-center text-light"
+      className="min-vh-100 about-me justify-content-center text-light"
       id="aboutMeSection"
     >
       <Col sm={1}></Col>
