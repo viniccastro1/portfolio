@@ -109,6 +109,12 @@ body {
 }
 
 @media (max-width: map-get($grid-breakpoints, "sm")) {
+  html,
+  #root,
+  body {
+    width: 100%;
+  }
+
   .h-100vh-res {
     height: 120vh;
   }
