@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.fa4e0250.css",
+    "main.js": "/portfolio/static/js/main.5fcd2842.js",
+    "static/media/video_mocking_text_generator.mp4": "/portfolio/static/media/video_mocking_text_generator.5ba4c143a12ee8bca742.mp4",
+    "static/media/bg_purple_computer.png": "/portfolio/static/media/bg_purple_computer.f4fbc594ddd000b94b4d.png",
+    "static/media/me_circle.png": "/portfolio/static/media/me_circle.9705662f3b62421a26f8.png",
+    "static/media/video_bodyfat_calculator.mp4": "/portfolio/static/media/video_bodyfat_calculator.9451bd2678f4701ebf8a.mp4",
+    "static/media/bg_purple_blurred_computer.jpg": "/portfolio/static/media/bg_purple_blurred_computer.1864e27de4fc05392669.jpg",
+    "static/media/bg_guy_reading.svg": "/portfolio/static/media/bg_guy_reading.dad6efe4723750b2ab15.svg",
+    "static/media/me.jpg": "/portfolio/static/media/me.f9b38a2c0263b6dbd5a6.jpg",
+    "static/media/thumb_bodyfat_calculator.png": "/portfolio/static/media/thumb_bodyfat_calculator.76570ee80b662e6ab2a6.png",
+    "static/media/bg_sprinkle.svg": "/portfolio/static/media/bg_sprinkle.40173dbd9ba1f5473ac1.svg",
+    "static/media/thumb_mocking_text_generator.png": "/portfolio/static/media/thumb_mocking_text_generator.1595be452abacfa61dca.png",
+    "static/media/icon_down_arrow.svg": "/portfolio/static/media/icon_down_arrow.bac87b3a80ee69a58f2d.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/mask_circle.svg": "/portfolio/static/media/mask_circle.c89b8760578905c157b0.svg",
+    "main.fa4e0250.css.map": "/portfolio/static/css/main.fa4e0250.css.map",
+    "main.5fcd2842.js.map": "/portfolio/static/js/main.5fcd2842.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa4e0250.css",
+    "static/js/main.5fcd2842.js"
+  ]
+}
